@@ -4,7 +4,11 @@ import Link from "next/link";
 export const metadata = {
   title: "India Calculators",
   description: "Simple, fast & accurate financial calculators for India",
+  verification: {
+    google: "x2TQhlm3bYPLiKk_crVPicoMj9B0p30_QyOj6PO_ZKY",
+  },
 };
+
 
 export default function RootLayout({
   children,
