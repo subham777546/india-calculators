@@ -56,6 +56,20 @@ export default function Home() {
             income.
           </p>
         </Link>
+
+        {/* FD */}
+<Link
+  href="/fd-calculator"
+  className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition"
+>
+  <h2 className="text-xl font-semibold text-gray-900 mb-2">
+    FD Calculator
+  </h2>
+  <p className="text-gray-600">
+    Calculate Fixed Deposit maturity amount and interest earned easily.
+  </p>
+</Link>
+
       </section>
     </div>
   );
