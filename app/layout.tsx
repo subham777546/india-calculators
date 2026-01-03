@@ -49,6 +49,13 @@ export default function RootLayout({
               >
                 Income Tax
               </Link>
+              <Link
+               href="/fd-calculator"
+               className="text-gray-700 hover:text-blue-600"
+                  >
+                     FD
+                 </Link>
+
             </div>
           </nav>
         </header>
