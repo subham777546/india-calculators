@@ -23,6 +23,48 @@ export default function FDCalculator() {
 
   const format = (num: number) =>
     num.toLocaleString("en-IN", { maximumFractionDigits: 0 });
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Fixed Deposit (FD)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "A Fixed Deposit (FD) is a financial instrument offered by banks and NBFCs where you invest a lump sum for a fixed tenure at a predetermined interest rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is FD maturity amount calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "FD maturity amount is calculated using compound interest based on the principal amount, interest rate, tenure, and compounding frequency."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which compounding frequency gives higher FD returns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "More frequent compounding such as quarterly compounding generally gives slightly higher returns compared to yearly or half-yearly compounding."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is FD interest taxable in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "Yes, interest earned on Fixed Deposits is taxable as per the investor's income tax slab in India."
+      }
+    }
+  ]
+};
 
   return (
     <>
@@ -32,6 +74,11 @@ export default function FDCalculator() {
           name="description"
           content="Calculate Fixed Deposit maturity amount and interest earned using our FD Calculator for India."
         />
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+/>
+
       </Head>
 
       <div className="min-h-screen bg-gray-100 p-4">
@@ -107,6 +154,55 @@ export default function FDCalculator() {
               Interest Earned: ₹{maturityAmount ? format(interestEarned) : "—"}
             </p>
           </div>
+          {/* FAQ Section */}
+<section className="mt-10">
+  <h2 className="text-xl font-bold text-gray-900 mb-4">
+    Frequently Asked Questions
+  </h2>
+
+  <div className="space-y-4 text-gray-700">
+    <div>
+      <h3 className="font-semibold text-gray-900">
+        What is a Fixed Deposit (FD)?
+      </h3>
+      <p>
+        A Fixed Deposit is a safe investment option where you deposit a lump sum
+        for a fixed period and earn interest at a predetermined rate.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="font-semibold text-gray-900">
+        How is FD maturity calculated?
+      </h3>
+      <p>
+        FD maturity is calculated using compound interest depending on the
+        deposit amount, interest rate, tenure, and compounding frequency.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="font-semibold text-gray-900">
+        Which FD compounding frequency is best?
+      </h3>
+      <p>
+        Quarterly compounding usually offers slightly higher returns compared
+        to yearly or half-yearly compounding.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="font-semibold text-gray-900">
+        Is FD interest taxable?
+      </h3>
+      <p>
+        Yes, FD interest is taxable in India and added to your total income as
+        per applicable income tax slab.
+      </p>
+    </div>
+  </div>
+</section>
+
         </div>
       </div>
     </>
